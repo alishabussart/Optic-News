@@ -6,7 +6,8 @@
 		<meta name="msapplication-tap-highlight" content="no" />
 		<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-
+		<title>Optic News</title>
+		
 		<link href='https://fonts.googleapis.com/css?family=Roboto:900,300,100,100italic,300italic,400italic,400,500,500italic,700,700italic,900italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
@@ -14,9 +15,16 @@
 
 		<link rel="stylesheet" href="../plugins/mdl/material.min.css">
 		<script src="../plugins/mdl/material.min.js"></script>
+		<script src="../plugins/cordova-plugin-inappbrowser/www/inappbrowser.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-blue.min.css" /> 
-		<title>Optic News</title>
+		
+		
+		<script>
+			function LaunchBrowser(url) {
+				cordova.InAppBrowser.open('http://www.youtube.com/DxYyHHR0Q1c?autoplay=0', '_system', 'location=yes');
+			}
+		</script>
 	</head>
 	<body>
 		<div class="top-bar">Optic News</div>
@@ -59,6 +67,10 @@
 						<p>Maecenas dignissim molestie eleifend. Mauris varius venenatis interdum. Donec sit amet urna vel dui condimentum faucibus mollis quis diam. Mauris et arcu sem. Suspendisse luctus, est eget pellentesque pretium, orci nisl porta metus, a tristique est arcu at ante. Ut eu sem in sem blandit lacinia. Fusce luctus orci in nulla volutpat pharetra. Nunc nec condimentum velit. Nam cursus nulla vitae tincidunt molestie. Sed eleifend, sapien sed convallis tristique, nibh eros molestie ex, eget suscipit elit lacus ac elit.</p>
 					</div>
 					
+					
+					
+					<div onclick="javascript: LaunchBrowser()">THIS IS A TEST "LINK"</div>
+					<br><br>
 					<iframe width="420" height="315" src="http://www.youtube.com/embed/DxYyHHR0Q1c?autoplay=0"></iframe>
 				</div>
 			</div>
@@ -67,13 +79,13 @@
 				<ul id="nav">
 					<li><a href="index.html"><i class="fa fa-map-o"></i></a></li>
 					<li><a href=""><i class="fa fa-camera"></i></a></li>
-					<li><a href="profile.html"><i class="fa fa-user"></i></a></li>
+					<!--<li><a href="profile.html"><i class="fa fa-user"></i></a></li>-->
 					<li><a href="listed-stories.html"><i class="fa fa-list"></i></a></li>
 				</ul>
 			</div>
 		
         
-        <script type="text/javascript" src="./cordova.js"></script>
+        <script type="text/javascript" src="js/cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();

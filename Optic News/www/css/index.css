@@ -130,7 +130,8 @@ a { text-decoration: none; }
 
 .bottom-bar ul#nav li {
 	display: inline-block;
-	width: 23.9%;
+	/*width: 23.9%;*/
+	width: 32.5%;
 	text-align: center;
 	padding: 10px 5px 8px 5px;
 	box-sizing: border-box;
@@ -234,7 +235,7 @@ a { text-decoration: none; }
 
 .listed-stories .item .summary { 
 	font-size: 95%;
-	color: #9e9e9e;
+	color: #353E47;
 	max-height: 150px;
 	overflow: hidden;
 	position:relative;
@@ -248,8 +249,13 @@ a { text-decoration: none; }
 	bottom: 0;
 	right: 0;
 	width: 100%;
-	height: 2.6em;
+	height: 4em;
 	background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+}
+
+.listed-stories .item .summary p {     
+	line-height: 1.3em;
+	margin-bottom: 6px; 
 }
 
 .listed-stories .item .summary .location { 
@@ -261,7 +267,7 @@ a { text-decoration: none; }
 
 
 .listed-stories .item .options { 
-	padding: 5px; 
+	padding: 10px; 
 	height: 20px; 
 	border-top: 1px solid #f2f2f2;
 	font-size: .9em;
@@ -367,7 +373,7 @@ a { text-decoration: none; }
 }
 
 .full-story .item .summary p {
-	text-indent: 30px;
+	text-indent: 15px;
 	line-height: 1.4em;
 }
 
@@ -405,7 +411,7 @@ a { text-decoration: none; }
 }
 
 .full-story .item .options { 
-	padding: 5px!important; 
+	padding: 10px!important; 
 	width: 100%;
 	font-size: .9em;
 	position: absolute;

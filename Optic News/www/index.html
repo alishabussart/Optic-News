@@ -11,10 +11,12 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<link rel="stylesheet" type="text/css" href="css/map.css" />
 
 		<link rel="stylesheet" href="../plugins/mdl/material.min.css">
 		<script src="../plugins/mdl/material.min.js"></script>
+		
+		<script src="../plugins/cordova-plugin-splashscreen/www/splashscreen.js"></script>
+		
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-blue.min.css" /> 
 		<title>Optic News</title>
@@ -22,8 +24,6 @@
 	<body>
 		<div class="top-bar">Optic News</div>
 		<div class="app main">
-
-
 			<style>
 				#map {
 					width: 100%;
@@ -53,7 +53,7 @@
 						'<a href="story1.html">Read Full Story</a>'
 					'</div>' +
 						'</div>';*/
-					var exampleimg = "./img/bike.png";
+					var exampleimg = "./img/bike.png'";
 					var contentString = 
 						"<div class='listed-stories map'><div class='item'><div class='image-preview'>"
 					+ "<div style='background-image: url('"
@@ -102,7 +102,7 @@
 							};
 
 							infoWindow.setPosition(pos);
-							infoWindow.setContent('Location found.');
+							//infoWindow.setContent('Location found.');
 							map.setCenter(pos);
 						}, function () {
 							handleLocationError(true, infoWindow, map.getCenter());
@@ -142,7 +142,7 @@
 			<ul id="nav">
 				<li class="active"><a href="index.html"><i class="fa fa-map-o"></i></a></li>
 				<li><a href=""><i class="fa fa-camera"></i></a></li>
-				<li><a href="profile.html"><i class="fa fa-user"></i></a></li>
+				<!--<li><a href="profile.html"><i class="fa fa-user"></i></a></li>-->
 				<li><a href="listed-stories.html"><i class="fa fa-list"></i></a></li>
 			</ul>
 		</div>
