@@ -155,6 +155,18 @@ a { text-decoration: none; }
 }
 
 
+/*UPLOAD*/
+.upload {}
+
+.upload .content { 
+	padding: 15px;
+	box-sizing: border-box;
+	/*height: 455px;
+	overflow: auto;*/
+	background-color: #FFF;
+	height: 100%;
+}
+
 
 /*STORY LIST*/
 .listed-stories {	
@@ -565,3 +577,57 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
+/*Input Styles*/
+.input {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	max-width: 350px;
+	vertical-align: top;
+	width:100%;
+}
+
+.input__field, textarea {
+	position: relative;
+	display: block;
+	padding: 0.8em;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	background: #fafafa;
+	color: #000;
+	font-weight: bold;
+	font-family: "dual300";
+	resize: none;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+	font-size: .9em;
+}
+
+textarea { height: 100px; }
+
+.input__field:focus, textarea:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	color: #DD2476;
+	font-weight: bold;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+}
