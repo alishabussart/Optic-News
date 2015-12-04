@@ -17,8 +17,9 @@
 		
 		<script src="../plugins/cordova-plugin-splashscreen/www/splashscreen.js"></script>
 		
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-blue.min.css" /> 
+		<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">		
 		<title>Optic News</title>
 	</head>
 	<body>
@@ -37,7 +38,7 @@
 					var mapCanvas = document.getElementById('map');
 					var mapOptions = {
 						center: new google.maps.LatLng(myLatLng),
-						zoom: 15,
+						zoom: 14,
 						styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":20},{"color":"#ececec"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"on"},{"color":"#f0f0ef"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#f0f0ef"}]},{"featureType":"landscape.man_made","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#d4d4d4"}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"visibility":"on"},{"color":"#ececec"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"lightness":21},{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#d4d4d4"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#303030"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"saturation":"-100"}]},{"featureType":"poi.attraction","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi.government","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi.medical","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi.park","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"featureType":"poi.place_of_worship","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi.school","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi.school","elementType":"geometry.stroke","stylers":[{"lightness":"-61"},{"gamma":"0.00"},{"visibility":"off"}]},{"featureType":"poi.sports_complex","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#dadada"},{"lightness":17}]}],
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					}
@@ -53,8 +54,8 @@
 						'<a href="story1.html">Read Full Story</a>'
 					'</div>' +
 						'</div>';*/
-					var exampleimg = "./img/bike.png'";
-					var contentString = 
+					
+					/*var contentString = 
 						"<div class='listed-stories map'><div class='item'><div class='image-preview'>"
 					+ "<div style='background-image: url('"
 					+ exampleimg
@@ -69,29 +70,61 @@
 					+ "<a href='map.html'><i class='fa fa-map-marker'></i></a></div>"
 					+ "<div class=''><i class='fa fa-star'></i></div>"
 					+ "<div class='view-full'><a href='story1.html'>Read Full Story</a></div></div></div></div></div>"
-					;
-
+					;*/
 					
-
-
+					/*var contentString = "Iron Man event blocking multiple lanes of traffic. Tempe, AZ.";
 					var infowindow = new google.maps.InfoWindow({
 						content: contentString,
 						maxWidth: 300,
-					});
-					var marker = new google.maps.Marker({
+					});*/
+					
+					
+					var newsAlerts = [
+						['Iron Man Competiton <a href="story1.html"><i class="fa fa-chevron-right"></i></a>', 33.430882, -111.941486, 1],
+						['ASU Condom Delivery <a href="story2.html"><i class="fa fa-chevron-right"></i></a>', 33.424154, -111.928037, 2],
+						['Digital Culture Showcase <a href="story3.html"><i class="fa fa-chevron-right"></i></a>', 33.419868, -111.937302, 3],
+						
+						['Police investigating possible robery, Tempe AZ', 33.422027, -111.930140, 4],
+						['<b>BREAKING:</b> Gas leak leads to fire, city working to contain.', 33.414460, -111.930902, 5],
+						['Maroubra Beach', -33.950198, 151.259302, 1],
+						['Maroubra Beach', -33.950198, 151.259302, 1],
+						['Maroubra Beach', -33.950198, 151.259302, 1],
+						['Maroubra Beach', -33.950198, 151.259302, 1]
+
+					];
+					
+					var infowindow = new google.maps.InfoWindow({maxWidth: 300});
+					var marker, i;
+					for (i = 0; i < newsAlerts.length; i++) {  
+						marker = new google.maps.Marker({
+							position: new google.maps.LatLng(newsAlerts[i][1], newsAlerts[i][2]),
+							map: map,
+							icon: image,
+							animation: google.maps.Animation.DROP
+						});
+
+						google.maps.event.addListener(marker, 'click', (function(marker, i) {
+							return function() {
+								infowindow.setContent(newsAlerts[i][0]);
+								infowindow.open(map, marker);
+							}
+						})(marker, i));
+					}
+					
+					/*var marker = new google.maps.Marker({
 						position: myLatLng,
 						map: map,
 						draggable: true,
 						animation: google.maps.Animation.DROP,
 						icon: image,
 						title: 'Optic News'
-					});
+					});*/
 					marker.addListener('click', function () {
 						infowindow.open(map, marker);
 					});
 					marker.addListener('click', toggleBounce);
 
-					var infoWindow = new google.maps.InfoWindow({ map: map });
+					//var infoWindow = new google.maps.InfoWindow({ map: map });
 
 					// Try HTML5 geolocation.
 					if (navigator.geolocation) {
