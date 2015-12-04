@@ -502,8 +502,11 @@ a { text-decoration: none; }
 /*Map Styles*/
 .gm-style .gm-style-iw { /*top: 0px!important; left: 0px!important; */ 
 	font: 1.1em "dual300";
+	text-align: left;
 }
 .gm-style .gm-style-iw a { color: #DD2476; } 
+.gm-style .gm-style-iw i.fa { margin-left: 3px; } 
+
 /*.gm-style .gm-style-iw > div { width: 300px; height: 300px; }*/
 
 .listed-stories.map .item { width: 300px; height: 323px; }
